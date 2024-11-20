@@ -1,6 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
-const { alldown } = require('nayan-media-downloader');
+const { alldown } = require('imon-media-downloader');
 const fs = require('fs');
 
 const callbackDataStore = {};
@@ -19,7 +19,7 @@ bot.onText(/\/start|start@.+/, async (msg) => {
     const chatId = msg.chat.id;
 
     const welcomeMessage = `
-🌟✨ ❝ *Welcome to the Nayan All-in-One Video Downloader Bot!* ❞ ✨🌟
+🌟✨ ❝ *Welcome to the Imon All-in-One Video Downloader Bot!* ❞ ✨🌟
 
 🎥 _Effortlessly download videos from multiple platforms._  
 🔗 _Send me a valid video link, and I’ll do the rest!_
@@ -39,11 +39,11 @@ bot.onText(/\/start|start@.+/, async (msg) => {
 
 ──────────────────────────  
 👨‍💻 *Developer*:  
-   ❝ *Mohammad Nayan* ❞  
+   ❝ *Mohammad Imon* ❞  
 
 📞 *Reach Out*:  
-   🔹 [Facebook](https://www.facebook.com/profile.php?id=100000959749712)  
-   🔹 [Telegram](https://t.me/MOHAMMADNAYAN)  
+   🔹 [Facebook](https://www.facebook.com/Imon.132233?mibextid=ZbWKwL)  
+   🔹 [Telegram](https://t.me/Farhan_islam12)  
 
 🚀 *Fast. Reliable. Easy to use.*  
 💡 *Start downloading now and enjoy the convenience!*
@@ -161,4 +161,4 @@ bot.on('callback_query', async (callbackQuery) => {
     delete callbackDataStore[sessionId];
 });
 
-console.log("Nayan Telegram Bot Running")
+console.log("Imon Telegram Bot Running")
