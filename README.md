@@ -3,13 +3,13 @@
 
 # Telegram video downloader bot
 
-A Telegram bot that allows users to download media videos in various qualities. Powered by **Mohammad Nayan**.
+A Telegram bot that allows users to download media videos in various qualities. Powered by **Mohammad Imon**.
 
 ## Features
 
 - Download media videos in **low**, **mp3** and **high** quality.
 - Easy to use with inline buttons for selecting video quality.
-- Powered by **Mohammad Nayan**.
+- Powered by **Mohammad Imon**.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ To use this bot, you will need:
 - An internet connection to download media videos.
 
 ## Usage npm 
-[nayan-media-downloader](https://www.npmjs.com/package/nayan-media-downloader)
+[nayan-media-downloader](https://www.npmjs.com/package/imon-media-downloader)
 
 [node-telegram-bot-api](https://www.npmjs.com/package/node-telegram-bot-api)
 
@@ -29,7 +29,7 @@ To use this bot, you will need:
 1. Clone this repository or copy the code into your local project.
 
 ```bash
-git clone https://github.com/MOHAMMAD-NAYAN/Telegram-downloader-bot.git
+git clone https://github.com/imon-404/Telegram-downloader-bot.git
 cd Telegram-downloader-bot
 ```
 
