@@ -8,10 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Mohammad Nayan",
+  "author": "Mohammad Imon",
   "license": "ISC",
   "dependencies": {
-    "nayan-media-downloader": "^2.6.7",
+    "imon-media-downloader": "^1.0.5",
     "node-telegram-bot-api": "^0.66.0",
     "telegram-user-info": "^1.1.1"
   }
