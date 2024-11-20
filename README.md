@@ -20,7 +20,7 @@ To use this bot, you will need:
 - An internet connection to download media videos.
 
 ## Usage npm 
-[nayan-media-downloader](https://www.npmjs.com/package/imon-media-downloader)
+[imon-media-downloader](https://www.npmjs.com/package/imon-media-downloader)
 
 [node-telegram-bot-api](https://www.npmjs.com/package/node-telegram-bot-api)
 
