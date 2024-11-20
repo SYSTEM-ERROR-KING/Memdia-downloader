@@ -4,7 +4,7 @@ const { alldown } = require('imon-media-downloader');
 const fs = require('fs');
 
 const callbackDataStore = {};
-const BOT_TOKEN = 'Your_Bot_Token';
+const BOT_TOKEN = '7428499817:AAFwJii2TINNinuNJ55fo61ULYZjdqC4qyw';
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 function removeHashtags(text) {
