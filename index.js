@@ -4,7 +4,7 @@ const { alldown } = require('imon-media-downloader');
 const fs = require('fs');
 
 const callbackDataStore = {};
-const BOT_TOKEN = '7428499817:AAFwJii2TINNinuNJ55fo61ULYZjdqC4qyw';
+const BOT_TOKEN = '7975910322:AAF90bKTbkDxrT6uTm2Ly0JZVP1SgErnkps';
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 function removeHashtags(text) {
@@ -42,7 +42,7 @@ bot.onText(/\/start|start@.+/, async (msg) => {
    ❝ *Mohammad Imon* ❞  
 
 📞 *Reach Out*:  
-   🔹 [Facebook](https://www.facebook.com/Imon.132233?mibextid=ZbWKwL)  
+   🔹 [Facebook](https://www.facebook.com/profile.php?id=100069926588234)  
    🔹 [Telegram](https://t.me/Farhan_islam12)  
 
 🚀 *Fast. Reliable. Easy to use.*  
@@ -54,19 +54,18 @@ bot.onText(/\/start|start@.+/, async (msg) => {
     await bot.sendMessage(chatId, welcomeMessage, { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
 
-
-
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
 
-    if (text.startsWith('https://')) {
+    // Check if the message is a text message and starts with "https://"
+    if (text && text.startsWith('https://')) {
         const loadingMsg = await bot.sendMessage(chatId, '⏳ Fetching and processing media...');
         try {
             const response = await alldown(text);
             if (response.status) {
                 const { title, high, low } = response.data;
-               const tit = removeHashtags(title);
+                const tit = removeHashtags(title);
                 const escapedTitle = escapeMarkdown(tit);
                 const sessionId = `session_${Date.now()}`;
                 callbackDataStore[sessionId] = { title: escapedTitle, high, low };
@@ -127,7 +126,7 @@ bot.on('callback_query', async (callbackQuery) => {
         bot.deleteMessage(chatId, loadingMsg.message_id);
     } else if (type === 'mp3') {
         const loadingMsg = await bot.sendMessage(chatId, '🎵 Extracting MP3, please wait...');
-        const audioPath = `Nayan_${Date.now()}.mp3`;
+        const audioPath = `Imon_${Date.now()}.mp3`;
 
         try {
             const audioStream = await axios({
@@ -161,4 +160,4 @@ bot.on('callback_query', async (callbackQuery) => {
     delete callbackDataStore[sessionId];
 });
 
-console.log("Imon Telegram Bot Running")
+console.log("Imon Telegram Bot Running");
