@@ -54,18 +54,19 @@ bot.onText(/\/start|start@.+/, async (msg) => {
     await bot.sendMessage(chatId, welcomeMessage, { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
 
+
+
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
     const text = msg.text;
 
-    // Check if the message is a text message and starts with "https://"
-    if (text && text.startsWith('https://')) {
+    if (text.startsWith('https://')) {
         const loadingMsg = await bot.sendMessage(chatId, '⏳ Fetching and processing media...');
         try {
             const response = await alldown(text);
             if (response.status) {
                 const { title, high, low } = response.data;
-                const tit = removeHashtags(title);
+               const tit = removeHashtags(title);
                 const escapedTitle = escapeMarkdown(tit);
                 const sessionId = `session_${Date.now()}`;
                 callbackDataStore[sessionId] = { title: escapedTitle, high, low };
@@ -118,7 +119,14 @@ bot.on('callback_query', async (callbackQuery) => {
         const url = type === 'high' ? high : low;
         const loadingMsg = await bot.sendMessage(chatId, `⏳ Sending ${quality} Quality Video...`);
 
-        await bot.sendVideo(chatId, url, {
+        const vid = (
+        await axios.get(
+          url,
+          { responseType: 'stream' }
+        )
+      ).data;
+
+        await bot.sendVideo(chatId, vid, {
             caption: `🎬 *Title:* ${title}\n📹 *Quality:* ${quality}`,
             parse_mode: 'Markdown',
         });
@@ -160,4 +168,4 @@ bot.on('callback_query', async (callbackQuery) => {
     delete callbackDataStore[sessionId];
 });
 
-console.log("Imon Telegram Bot Running");
+console.log("Imon Telegram Bot Running")
